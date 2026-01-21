@@ -16,7 +16,7 @@ export const Card = ({
             whileHover={interactive ? { y: -2, boxShadow: "var(--shadow-md)" } : {}}
             className={clsx(
                 "p-5 rounded-2xl transition-all duration-300",
-                glass ? "glass-panel" : "bg-[var(--surface)] shadow-sm",
+                glass ? "bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm" : "bg-[var(--surface)] shadow-sm",
                 className
             )}
             {...props}

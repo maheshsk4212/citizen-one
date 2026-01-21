@@ -48,7 +48,7 @@ export const AppShell = () => {
                     <motion.header
                         animate={{ y: isVisible ? 0 : -100 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute top-0 left-0 right-0 z-40 glass-panel border-b-0 rounded-b-2xl"
+                        className="absolute top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-xl border border-white/50 shadow-sm border-b-0 rounded-b-2xl"
                     >
                         <div className="flex items-center justify-between px-5 py-4">
                             <div className="flex gap-3">
@@ -138,7 +138,7 @@ export const AppShell = () => {
                 <motion.nav
                     animate={{ y: isVisible ? 0 : 100 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute bottom-0 left-0 right-0 h-[80px] glass-panel rounded-t-3xl border-t border-[var(--glass-border)] pb-5 px-6 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] z-50"
+                    className="absolute bottom-0 left-0 right-0 h-[80px] bg-white/90 backdrop-blur-xl border-t border-white/50 rounded-t-3xl pb-5 px-6 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] z-50"
                 >
                     <div className="flex items-center justify-between h-full">
                         <BottomNavItem icon={Home} label="Home" path="/" isActive={location.pathname === '/'} />
