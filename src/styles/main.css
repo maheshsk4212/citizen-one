@@ -20,9 +20,9 @@
   --accent-glow: rgba(245, 158, 11, 0.4);
 
   --surface: #ffffff;
-  --surface-translucent: rgba(255, 255, 255, 0.85);
-  --glass: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.3);
+  --surface-translucent: rgba(255, 255, 255, 0.9);
+  --glass: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.5);
 
   --text-main: #111827;
   --text-secondary: #4B5563;
@@ -100,8 +100,8 @@ body {
 @layer components {
   .glass-panel {
     background-color: var(--glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-sm);
   }
