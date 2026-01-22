@@ -38,7 +38,7 @@ const ProfilePage = () => {
             <div className="space-y-6 px-1">
                 {sections.map((section, idx) => (
                     <div key={idx}>
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 px-2">{section.title}</h3>
+                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-6 px-2">{section.title}</h3>
                         <Card className="overflow-hidden">
                             {section.items.map((item, itemIdx) => (
                                 <div
