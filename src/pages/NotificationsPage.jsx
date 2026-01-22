@@ -12,7 +12,7 @@ const NotificationsPage = () => {
 
     return (
         <div className="pb-20">
-            <h2 className="text-xl font-bold text-gray-900 mb-10 px-1 pt-4">Alerts & Notifications</h2>
+            <h2 className="text-xl font-bold text-gray-900 px-1 pt-6 block" style={{ marginBottom: '2.5rem' }}>Alerts & Notifications</h2>
 
             <div className="space-y-4 px-1">
                 {alerts.map((alert) => (
