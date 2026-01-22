@@ -42,7 +42,7 @@ export default function SuperHome() {
 
             {/* Recent Activity Section - Large top margin with border */}
             <div className="mt-12 pt-8 border-t border-gray-100">
-                <div className="flex items-center justify-between px-1" style={{ marginBottom: '1.5rem' }}>
+                <div className="flex items-center justify-between px-1" style={{ marginBottom: '1.2rem' }}>
                     <h3 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider">Recent Activity</h3>
                     <button className="text-[var(--primary)] text-xs font-bold flex items-center gap-1 hover:underline">
                         View All <ArrowRight size={14} />

@@ -45,7 +45,7 @@ export const ServiceGrid = ({ limit }) => {
 
     return (
         <div>
-            <div className="flex items-center justify-between px-1" style={{ marginBottom: '1.5rem' }}>
+            <div className="flex items-center justify-between px-1" style={{ marginBottom: '1.2rem' }}>
                 <h3 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider block">All Services</h3>
                 {limit && (
                     <Link to="/services" className="text-[var(--primary)] text-xs font-bold flex items-center gap-1 hover:underline">

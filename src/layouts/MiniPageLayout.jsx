@@ -153,7 +153,7 @@ export const MiniPageLayout = ({ title, role, hero, actions, sections, aiInsight
                 {/* Quick Actions */}
                 {actions && actions.length > 0 && (
                     <section>
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider block" style={{ marginBottom: '1.5rem' }}>Quick Actions</h3>
+                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider block" style={{ marginBottom: '1.2rem' }}>Quick Actions</h3>
                         <div className="grid grid-cols-4 gap-4">
                             {actions.map((action, idx) => (
                                 <button key={idx} className="flex flex-col items-center gap-2 group">
@@ -170,7 +170,7 @@ export const MiniPageLayout = ({ title, role, hero, actions, sections, aiInsight
                 {/* Main Sections */}
                 {sections && sections.length > 0 && (
                     <section>
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider block" style={{ marginBottom: '1.5rem' }}>Services</h3>
+                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider block" style={{ marginBottom: '1.2rem' }}>Services</h3>
                         <div className="grid grid-cols-1 gap-3">
                             {sections.map((section, idx) => (
                                 <Link

@@ -27,7 +27,7 @@ export const AISmartSection = () => {
 
     return (
         <div className="py-2">
-            <div className="flex items-center gap-2 px-1" style={{ marginBottom: '1.5rem' }}>
+            <div className="flex items-center gap-2 px-1" style={{ marginBottom: '1.2rem' }}>
                 <Sparkles size={14} className="text-violet-600" />
                 <h3 className="text-xs font-bold text-violet-700 uppercase tracking-wider">Citizen AI Insights</h3>
             </div>

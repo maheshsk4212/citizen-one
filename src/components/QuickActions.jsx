@@ -48,7 +48,7 @@ export const QuickActions = () => {
 
     return (
         <div>
-            <h3 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider px-1 block" style={{ marginBottom: '1.5rem' }}>Quick Actions</h3>
+            <h3 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider px-1 block" style={{ marginBottom: '1.2rem' }}>Quick Actions</h3>
             <motion.div
                 variants={container}
                 initial="hidden"
