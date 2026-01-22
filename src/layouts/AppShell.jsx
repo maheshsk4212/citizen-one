@@ -101,11 +101,6 @@ export const AppShell = () => {
                                     </select>
                                     <ChevronDown size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] pointer-events-none" />
                                 </div>
-
-                                <Link to="/notifications" className="p-2 rounded-full bg-[var(--surface)] text-[var(--text-main)] shadow-sm relative transition-transform active:scale-95">
-                                    <Bell size={20} />
-                                    <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 border border-white"></span>
-                                </Link>
                             </div>
                         </div>
                     </motion.header>
