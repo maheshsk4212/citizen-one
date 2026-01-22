@@ -31,14 +31,14 @@ const ProfilePage = () => {
                     <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${activeRole}`} alt="Profile" className="w-full h-full object-cover" />
                 </div>
                 <h2 className="text-xl font-bold text-gray-900">{activeRole}</h2>
-                <p className="text-sm text-gray-500">Gold Member • New York</p>
+                <p className="text-sm text-gray-500">Gold Member • Lusaka</p>
             </div>
 
             {/* Menu Items */}
             <div className="space-y-6 px-1">
                 {sections.map((section, idx) => (
                     <div key={idx}>
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-2">{section.title}</h3>
+                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 px-2">{section.title}</h3>
                         <Card className="overflow-hidden">
                             {section.items.map((item, itemIdx) => (
                                 <div
