@@ -37,8 +37,8 @@ const ProfilePage = () => {
             {/* Menu Items */}
             <div className="space-y-6 px-1">
                 {sections.map((section, idx) => (
-                    <div key={idx}>
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-6 px-2">{section.title}</h3>
+                    <div key={idx} className={idx > 0 ? "mt-10" : ""}>
+                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider px-2 block" style={{ marginBottom: '1.2rem' }}>{section.title}</h3>
                         <Card className="overflow-hidden">
                             {section.items.map((item, itemIdx) => (
                                 <div
