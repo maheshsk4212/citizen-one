@@ -2,8 +2,16 @@ import React from 'react';
 import { MiniPageLayout } from '../../layouts/MiniPageLayout';
 import { Card } from '../../components/Card';
 import { ArrowLeftRight, CreditCard, Receipt, FileText, Banknote, ShieldAlert, LineChart } from 'lucide-react';
+import { useRole, ROLES } from '../../context/RoleContext';
 
 const BankingPage = () => {
+    const { activeRole, selectedPartner, ROLES } = useRole();
+    const isAgent = activeRole === ROLES.AGENT;
+
+    const pageTitle = isAgent && selectedPartner
+        ? `Banking - ${selectedPartner.name}`
+        : "Banking";
+
     // Mock Data based on YAML
     const hero = (
         <Card className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-5 shadow-lg shadow-blue-500/30">
@@ -28,6 +36,10 @@ const BankingPage = () => {
         { label: 'Pay Bill', icon: Receipt, bg: 'bg-orange-50', color: 'text-orange-600' },
         { label: 'Loan', icon: Banknote, bg: 'bg-green-50', color: 'text-green-600' },
         { label: 'Statements', icon: FileText, bg: 'bg-gray-50', color: 'text-gray-600' },
+        ...(activeRole === ROLES.AGENT ? [
+            { id: 'assisted-opening', label: 'Assist Open', icon: FileText, bg: 'bg-indigo-50', color: 'text-indigo-600' },
+            { id: 'assisted-kyc', label: 'Assisted KYC', icon: FileText, bg: 'bg-emerald-50', color: 'text-emerald-600' }
+        ] : [])
     ];
 
     const sections = [
@@ -44,7 +56,7 @@ const BankingPage = () => {
 
     return (
         <MiniPageLayout
-            title="Banking"
+            title={pageTitle}
             theme="blue"
             hero={hero}
             actions={actions}

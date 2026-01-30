@@ -2,8 +2,16 @@ import React from 'react';
 import { MiniPageLayout } from '../../layouts/MiniPageLayout';
 import { Card } from '../../components/Card';
 import { Smartphone, Wifi, CreditCard, RotateCw } from 'lucide-react';
+import { useRole, ROLES } from '../../context/RoleContext';
 
 const MobilePage = () => {
+    const { activeRole, selectedPartner } = useRole();
+    const isAgent = activeRole === ROLES.AGENT;
+
+    const pageTitle = isAgent && selectedPartner
+        ? `Mobile - ${selectedPartner.name}`
+        : "Mobile & Airtime";
+
     const hero = (
         <Card className="bg-purple-700 text-white p-5 shadow-md">
             <div className="flex justify-between">
@@ -39,7 +47,7 @@ const MobilePage = () => {
 
     return (
         <MiniPageLayout
-            title="Mobile & Airtime"
+            title={pageTitle}
             hero={hero}
             actions={actions}
             sections={sections}

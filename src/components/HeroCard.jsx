@@ -19,6 +19,11 @@ export const HeroCard = ({ activeRole }) => {
                         </div>
                         <h2 className="text-sm font-bold text-indigo-950 uppercase tracking-wide">Citizen AI Alert</h2>
                     </div>
+                    {activeRole === ROLES.AGENT && (
+                        <div className="px-2 py-0.5 rounded-full bg-indigo-600 text-[10px] font-black text-white uppercase tracking-widest">
+                            Agent Mode
+                        </div>
+                    )}
                 </div>
 
                 {activeRole === ROLES.CUSTOMER && (

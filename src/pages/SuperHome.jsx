@@ -2,19 +2,49 @@ import React from 'react';
 import { QuickActions } from '../components/QuickActions';
 import { ServiceGrid } from '../components/ServiceGrid';
 import { Card } from '../components/Card';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Building2, Landmark, Smartphone } from 'lucide-react';
 import { useRole } from '../context/RoleContext';
 import { HeroCard } from '../components/HeroCard';
 import { AISmartSection } from '../components/AISmartSection';
 import { WeatherWidget } from '../components/WeatherWidget';
 import { ShoppingCart, Zap, Coffee } from 'lucide-react';
 
-export default function SuperHome() {
-    const { activeRole, ROLES } = useRole();
+// Agent Components
+import { ContextSelection } from '../components/agent/ContextSelection';
+import { PartnerTypeSelection } from '../components/agent/PartnerTypeSelection';
+import { PartnerSelection } from '../components/agent/PartnerSelection';
+import { PartnerDashboard } from '../components/agent/PartnerDashboard';
 
+export default function SuperHome() {
+    const {
+        activeRole,
+        ROLES,
+        workContext,
+        CONTEXTS,
+        selectedPartnerType,
+        selectedPartner
+    } = useRole();
+
+    // AGENT FLOW HANDLING
+    if (activeRole === ROLES.AGENT) {
+        if (!workContext) {
+            return <ContextSelection />;
+        }
+
+        if (workContext === CONTEXTS.PARTNER) {
+            if (!selectedPartnerType) {
+                return <PartnerTypeSelection />;
+            }
+            if (!selectedPartner) {
+                return <PartnerSelection />;
+            }
+            return <PartnerDashboard />;
+        }
+    }
+
+    // DEFAULT / CITIZENONE MODE / FARMER FLOW
     return (
         <div className="pb-32">
-
             {/* Hero Alert Card - Large bottom margin */}
             <div className="mb-8">
                 <HeroCard activeRole={activeRole} />
@@ -27,7 +57,7 @@ export default function SuperHome() {
                 </div>
             )}
 
-            {/* Quick Actions Section */}
+            {/* Agent Specific Quick Actions or Generic */}
             <QuickActions />
 
             {/* Services Section - Large top margin */}
@@ -70,7 +100,6 @@ export default function SuperHome() {
                     ))}
                 </div>
             </div>
-
         </div>
     );
 }

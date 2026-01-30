@@ -2,8 +2,11 @@ import React from 'react';
 import { MiniPageLayout } from '../../layouts/MiniPageLayout';
 import { Card } from '../../components/Card';
 import { Landmark, FileText, Stamp, Scale } from 'lucide-react';
+import { useRole, ROLES } from '../../context/RoleContext';
 
 const GovServicesPage = () => {
+    const { activeRole } = useRole();
+
     const hero = (
         <Card className="bg-cyan-700 text-white p-5 shadow-lg relative overflow-hidden">
             <div className="relative z-10">
@@ -19,6 +22,9 @@ const GovServicesPage = () => {
         { label: 'Certificates', icon: Stamp, bg: 'bg-amber-50', color: 'text-amber-700' },
         { label: 'Land Records', icon: FileText, bg: 'bg-green-50', color: 'text-green-700' },
         { label: 'My Docs', icon: FileText, bg: 'bg-gray-100', color: 'text-gray-600' },
+        ...(activeRole === ROLES.AGENT ? [
+            { id: 'assisted-app', label: 'Assist App', icon: FileText, bg: 'bg-indigo-50', color: 'text-indigo-600' }
+        ] : [])
     ];
 
     const sections = [
